@@ -45,7 +45,6 @@ Une fois Docker Desktop bien lancé et actif, la commande a parfaitement fonctio
   * La commande `docker logs` affiche les logs.
   * Les commandes `docker stop` et `docker rm` suppriment le conteneur, libérant ainsi le port réseau et le nom `monteste`.
 
-![Capture d'écran - Serveur Nginx fonctionnel](capture-tp2.png)
 
 ---
 
@@ -81,7 +80,7 @@ Une fois Docker Desktop bien lancé et actif, la commande a parfaitement fonctio
   * En tapant `http://localhost:8085` dans mon navigateur, ma page personnalisée s'est affichée directement avec le titre : *"Ma premiére image Docker !"*.
   * Le fichier `index.html` d'origine de Nginx a bien été remplacé par le mien. 
 
-![Capture d'écran - Site personnalisé sur le port 8085](capture-tp4.png)
+
 
 ---
 
@@ -97,9 +96,20 @@ Une fois Docker Desktop bien lancé et actif, la commande a parfaitement fonctio
   * En ouvrant `http://localhost:8080` dans mon navigateur, la page d'accueil de Nginx s'est affichée avec succès, prouvant que la redirection du port `8080:80` a fonctionné.
   * Après avoir exécuté `docker compose down`, le conteneur a instantanément disparu.
 
-![Capture d'écran - Docker Compose fonctionnel](capture-tp5.png)
 
 ---
 
 ## 7. Initiation Git et GitHub
 *Installation, configuration et mise en ligne du dépôt de suivi.*
+### Suivi de la démarche Git :
+1. **Création & Liaison** : Initialisation du répertoire local et connexion au dépôt distant GitHub `onboarding-dgs`.
+2. **Suivi des modifications** : Utilisation de `git add .` pour indexer le fichier `notes.md` corrigé et la capture d'écran `capture-defi.png`.
+3. **Validation locale** : Enregistrement des changements avec `git commit -m "..."` pour dater et décrire la fin du TP.
+4. **Synchronisation** : Exécution de `git push` pour téléverser l'intégralité des livrables sur GitHub pour correction.
+lien du depot: https://github.com/diarra167/onboarding-dgs.git
+### Livrable — Défi : Connexion à la base de données
+
+* **Valeurs erronées :** DB_HOST=database, DB_PORT=1234 (L'application cherchait un mauvais nom d'hôte et un port incorrect).
+* **Valeurs correctes :** DB_HOST=db, DB_PORT=5432 (Utilisation du nom du service Docker et du port standard PostgreSQL).
+* **Explication :** Dans Docker Compose, les conteneurs partagent un réseau où le nom du service sert d'adresse DNS, et PostgreSQL écoute par défaut sur le port 5432.
+
